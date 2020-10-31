@@ -34,11 +34,8 @@ print(f_sum)
 s_sum = round(sum(v[1])/len(v[1]), 2)
 print(s_sum)
 sum_all_students = {'student_1': f_sum, 'student_2': s_sum}
-<<<<<<< HEAD
 best_student = list(sum_all_students.keys())[list(sum_all_students.values()).index(max(sum_all_students.values()))]
-=======
 best_student = max(sum_all_students.values())
->>>>>>> 1175f9a96c95af86b9a48fbe91027193470b5f68
 print(best_student)
 new_v = v[0]+(v[1])
 sum_all_students_in_all_class = round(sum(new_v)/len(new_v), 2)
@@ -47,11 +44,8 @@ new_v_a = v_a[0]+v_a[1]
 sum_all_students_in_all_class_a = round(sum(new_v_a)/len(new_v_a), 2)
 print(sum_all_students_in_all_class_a)
 class_sum = {'class_a': sum_all_students_in_all_class_a, 'class_b': sum_all_students_in_all_class}
-<<<<<<< HEAD
 value = list(class_sum.values())
 key = list(class_sum.keys())
 best = key[value.index(max(class_sum.values()))]
-=======
 best = max(class_sum.values())
->>>>>>> 1175f9a96c95af86b9a48fbe91027193470b5f68
 print(best)
