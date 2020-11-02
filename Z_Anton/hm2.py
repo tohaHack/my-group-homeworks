@@ -35,7 +35,7 @@ print(s_sum)
 sum_all_students = {'student_1': f_sum, 'student_2': s_sum}
 best_student = list(sum_all_students.keys())[list(sum_all_students.values()).index(max(sum_all_students.values()))]
 print(best_student)
-new_v = v[0]+(v[1])
+new_v = v[0]+v[1]
 sum_all_students_in_all_class = round(sum(new_v)/len(new_v), 2)
 print(sum_all_students_in_all_class)
 new_v_a = v_a[0]+v_a[1]
