@@ -28,14 +28,12 @@ for elem_a in sample_dict['class-_a']:
     v_a.append(list(i for i in sample_dict['class-_a'][elem_a]['marks'].values()))
 print(sample_dict['class-_a'])
 print(v, v_a)
-s = [13,44]
 f_sum = round(sum(v[0])/len(v[0]), 2)
 print(f_sum)
 s_sum = round(sum(v[1])/len(v[1]), 2)
 print(s_sum)
 sum_all_students = {'student_1': f_sum, 'student_2': s_sum}
 best_student = list(sum_all_students.keys())[list(sum_all_students.values()).index(max(sum_all_students.values()))]
-best_student = max(sum_all_students.values())
 print(best_student)
 new_v = v[0]+(v[1])
 sum_all_students_in_all_class = round(sum(new_v)/len(new_v), 2)
@@ -47,5 +45,4 @@ class_sum = {'class_a': sum_all_students_in_all_class_a, 'class_b': sum_all_stud
 value = list(class_sum.values())
 key = list(class_sum.keys())
 best = key[value.index(max(class_sum.values()))]
-best = max(class_sum.values())
 print(best)
