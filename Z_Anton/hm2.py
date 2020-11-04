@@ -16,16 +16,18 @@ sample_dict['class-_a']['new_student'] = {'name': 'Vova', 'marks':{
     'math':100, 'history':95
 }}
 sample_dict['class_b'] = copy.deepcopy(sample_dict['class-_a'])
-line = 'Igor', 'Anton'
 v = []
 v_a = []
-for elem in sample_dict['class_b']:
-    sample_dict['class_b'][elem]['marks'].update({'physics': 70})
-    sample_dict['class_b'][elem]['name'] = random.choice(line)
-    v.append(list(i for i in sample_dict['class_b'][elem]['marks'].values()))
+sample_dict['class_b']['student']['marks'].update({'physics': 70})
+sample_dict['class_b']['new_student']['marks'].update({'physics': 97})
+sample_dict['class_b']['student']['name'] = 'Igor'
+sample_dict['class_b']['new_student']['name'] = 'Anton'
+
+v.append(list(sample_dict['class_b']['student']['marks'].values()))
+v.append(list(sample_dict['class_b']['new_student']['marks'].values()))
+v_a.append(list(sample_dict['class-_a']['student']['marks'].values()))
+v_a.append(list(sample_dict['class-_a']['new_student']['marks'].values()))
 print(sample_dict['class_b'])
-for elem_a in sample_dict['class-_a']:
-    v_a.append(list(i for i in sample_dict['class-_a'][elem_a]['marks'].values()))
 print(sample_dict['class-_a'])
 print(v, v_a)
 f_sum = round(sum(v[0])/len(v[0]), 2)
