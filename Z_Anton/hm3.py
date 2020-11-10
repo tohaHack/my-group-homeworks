@@ -1,21 +1,32 @@
-test = input('проходили ли вы регистрацыю: ')
-if test == 'да':
-    name_f = input('введи имя пользователя: ')
-    password_f = input('введи пароль: ')
-    with open('name_password', 'r+') as f1:
+def registration():
+    with open('users.txt', 'r+') as f1:
+        name_f = input('введи имя аккаунта: ')
+        password_f = input('введи пароль: ')
         np = f1.read()
-        if name_f in np and password_f in np:
-            print('вход успешен')
+        check = 'Your login: ' + name_f + ' your password: ' + password_f
+        if check in np:
+            print('вход успешен, удачки:)')
         else:
-            print('вы не зарегестрированы')
+            print('вы не зарегестрированы:(' + '\n')
+            test2 = input('Может хотите попробывать повторно ?: ')
+            if test2 == 'да' or 'д':
+                registration()
+            else:
+                print('вы не зарегестрированы:(')
+
+
+log = open('log.txt', 'a+')
+test = input('проходили ли вы регистрацию ?: ')
+if test == 'да':
+    registration()
 else:
     question = input('хотите пройти регистрацыю: ')
     if question == 'да':
-        name = input('введи имя пользователя: ')
-        password = input('введи пароль: ')
-        password_test = int(input('введи пароль повторно: '))
-        with open('name_password', 'a') as f:
+        with open('users.txt', 'a') as f:
+            name = 'Your login: ' + input('Введи имя аккаунта - ')
+            password = ' your password: ' + input('и пароль не забудь) - ') + '\n'
             f.write(name)
-            f.write('\n'+password)
+            f.write(password)
+            log.write('registered: '+name)
     else:
-        print('удачи')
+        print('удачи:)')
