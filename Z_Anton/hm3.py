@@ -1,4 +1,6 @@
-def registration():
+log = open('log.txt', 'a+')
+test = input('проходили ли вы регистрацию ?: ')
+if test == 'да':
     with open('users.txt', 'r+') as f1:
         name_f = input('введи имя аккаунта: ')
         password_f = input('введи пароль: ')
@@ -7,18 +9,7 @@ def registration():
         if check in np:
             print('вход успешен, удачки:)')
         else:
-            print('вы не зарегестрированы:(' + '\n')
-            test2 = input('Может хотите попробывать повторно ?: ')
-            if test2 == 'да' or 'д':
-                registration()
-            else:
-                print('вы не зарегестрированы:(')
-
-
-log = open('log.txt', 'a+')
-test = input('проходили ли вы регистрацию ?: ')
-if test == 'да':
-    registration()
+            print('вы не зарегестрированы:(')
 else:
     question = input('хотите пройти регистрацыю: ')
     if question == 'да':
